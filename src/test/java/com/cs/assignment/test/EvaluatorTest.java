@@ -2,6 +2,7 @@ package com.cs.assignment.test;
 
 import static org.junit.Assert.*;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.cs.assignment.main.Evaluator;
@@ -9,6 +10,7 @@ import com.cs.assignment.main.Main;
 
 public class EvaluatorTest {
 
+	@Ignore
 	@Test
 	public void testXGreaterThanOrEqualToY() {
 		
@@ -20,16 +22,7 @@ public class EvaluatorTest {
 		assertTrue(isXGreaterThanOrEqualToY);
 	}
 	
-	@Test
-	public void testGetXGreaterThanOrEqualToYString() {
-		
-		System.out.println("Running Test: testGetXGreaterThanOrEqualToYString");
-		int x = 4;
-		int y = 2;
-		
-		assertEquals(Evaluator.getResultString(x, y), "x is greater than or equal to y");
-	}
-	
+	@Ignore
 	@Test
 	public void testYGreaterThanX() {
 		
@@ -41,21 +34,21 @@ public class EvaluatorTest {
 		assertFalse(isXGreaterThanOrEqualToY);
 	}
 	
+	
 	@Test
-	public void testYGreaterThanXString() {
+	public void testMainXgtY(){
 		
-		System.out.println("Running Test: testYGreaterThanXString");
-		int x = 2;
-		int y = 4;
-
-		assertEquals(Evaluator.getResultString(x, y), "y is greater than x");
+		System.out.println("Running Test: testMainXgtY");
+		System.out.println("Inputs: x=3,y=2");
+		Main.main((new String[] {"3", "2"}));
 	}
 	
 	@Test
-	public void testMain(){
+	public void testMainYgtX(){
 		
-		System.out.println("Running Test: testMain");
-		Main.main((new String[] {"3", "2"}));
+		System.out.println("Running Test: testMainXgtY");
+		System.out.println("Inputs: x=2,y=3");
+		Main.main((new String[] {"2", "3"}));
 	}
 
 }

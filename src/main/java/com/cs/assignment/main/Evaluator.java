@@ -14,9 +14,9 @@ public class Evaluator {
 	public static String getResultString(int x, int y){
 		
 		if(isXGreaterThanOrEqualToY(x,y)){
-			return "x is greater than or equal to y";
+			return "x = " + x + " is greater than or equal to y = " + y;
 		}else{
-			return "y is greater than x";
+			return "y = " + y + " is greater than x = " + x;
 		}
 	}
 
