@@ -8,6 +8,7 @@ import org.junit.Test;
 import com.cs.assignment.main.Evaluator;
 import com.cs.assignment.main.Main;
 
+@Ignore
 public class EvaluatorTest {
 
 	@Ignore

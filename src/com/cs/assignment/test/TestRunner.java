@@ -6,7 +6,7 @@ import org.junit.runner.notification.Failure;
 
 public class TestRunner {
    public static void main(String[] args) {
-      Result result = JUnitCore.runClasses(EvaluatorTest.class);
+      Result result = JUnitCore.runClasses(SVMTest.class);
 		
       for (Failure failure : result.getFailures()) {
          System.out.println(failure.toString());
