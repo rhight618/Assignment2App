@@ -27,7 +27,7 @@ public class SVMTest {
 	ImmutableSvmParameterGrid.Builder builder = ImmutableSvmParameterGrid.builder();
 	ImmutableSvmParameter params;
     private MutableBinaryClassificationProblemImpl problem;
-    BinaryModel model;
+    static BinaryModel model;
     static float [][] data = new float [6] [2];
 	
 	@Before
@@ -50,6 +50,8 @@ public class SVMTest {
 
         params = builder.build();
         // / create training parameters ------------
+        
+        System.out.println("Executing Tests...");
     }
 	
 	@Test
@@ -143,17 +145,30 @@ public class SVMTest {
 		System.out.println("Training model with data...");
 	    model = svm.train(problem, params);
 	    
+	}
+	
+	
+	@Test
+	public void zTestNewYgtX(){
+		
 	    System.out.println("Predicting Test Result for values, x = 1.0 and y = 8.0");
 	    SparseVector xTest = generateFeatures(new float[]{1.0f, 8.0f});
 	    int predictedLabel = (Integer) model.predictLabel(xTest);
 	    System.out.println("Predicted Result: " + predictedLabel);
-	    
-	    System.out.println("Predicting Test Result for values, x = 7.0 and y = 3.0");
-	    SparseVector xTest2 = generateFeatures(new float[]{7.0f, 3.0f});
-	    int predictedLabel2 = (Integer) model.predictLabel(xTest2);
-	    System.out.println("Predicted Result: " + predictedLabel2);
+
+		assertTrue(predictedLabel==1);
 	}
 	
+	@Test
+	public void zTestNewXgtY(){
+		
+	    System.out.println("Predicting Test Result for values, x = 7.0 and y = 3.0");
+	    SparseVector xTest = generateFeatures(new float[]{7.0f, 3.0f});
+	    int predictedLabel = (Integer) model.predictLabel(xTest);
+	    System.out.println("Predicted Result: " + predictedLabel);
+
+		assertTrue(predictedLabel==1);
+	}
 	
 	 private static int generateLabel(float f, float g) {
 

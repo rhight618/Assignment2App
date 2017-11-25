@@ -28,9 +28,7 @@ public class Evaluator {
 		}
 		
 	}
-	
-	
-	
+
 	
 	public static String getResultString(float x, float y){
 		
