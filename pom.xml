@@ -69,6 +69,16 @@
 		<artifactId>jlibsvm</artifactId>
 		<version>LATEST</version>
 	</dependency>
+	<dependency>
+    	<groupId>org.twitter4j</groupId>
+    	<artifactId>twitter4j-core</artifactId>
+    	<version>4.0.7</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-csv</artifactId>
+    <version>1.6</version>
+</dependency>
  </dependencies>
  <repositories>
 	<repository>
